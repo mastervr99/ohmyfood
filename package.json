@@ -1,0 +1,11 @@
+{
+  "name": "Ohmyfodd",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "sass": "sass --watch css/style.scss:css/style.css"
+  },
+  "dependencies": {
+    "sass": "^1.69.5"
+  }
+}
