@@ -16,6 +16,9 @@
 
 <body>
     <div class="main-container">
+        <div class="loading">
+            <img class="loading-image" src="./images/Eclipse-1s-200px.svg" alt="Chargement..." />
+          </div>
         <header class="header">
             <img class="header__logo" src="./images/logo/ohmyfood@2x.svg" alt="">
             <div class="location">
@@ -32,15 +35,15 @@
                 <section class="fonctionnement">
                     <h2>Fonctionnement</h2>
                     <ul class="">
-                        <li><button><i class="fa-solid fa-mobile-screen"></i>Choissisez un restaurant</button></li>
-                        <li><button><i class="fa-solid fa-list"></i>Composez votre menu</button></li>
-                        <li><button><i class="fa-solid fa-store"></i>Dégustez au restaurant</button></li>
+                        <li><i class="fa-solid fa-mobile-screen"></i>Choissisez un restaurant</li>
+                        <li><i class="fa-solid fa-list"></i>Composez votre menu</li>
+                        <li><i class="fa-solid fa-store"></i>Dégustez au restaurant</li>
                     </ul>
                 </section>
                 <section class="restaurants">
                     <h2>Restaurants</h2>
                     <div class="restaurants__cards">
-                        <a href="#">
+                        <a href="./restaurants/la_palette_du_gout.html">
                             <article class="card">
                                 <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
                                 <div class="card-content">
@@ -49,7 +52,10 @@
                                         <p class="card-subtitle">Ménilmontant</p>
                                     </div>
                                     <div>
-                                        <i class="fa-solid fa-heart"></i>
+                                        <button class="icon-button">
+                                            <i class="fa-regular fa-heart icon-default"></i>
+                                            <i class="fa-solid fa-heart icon-hover "></i>
+                                        </button>
                                     </div>
                                 </div>
                             </article>
@@ -63,7 +69,10 @@
                                         <p class="card-subtitle">Charonne</p>
                                     </div>
                                     <div>
-                                        <i class="fa-solid fa-heart"></i>
+                                        <button class="icon-button">
+                                            <i class="fa-regular fa-heart icon-default"></i>
+                                            <i class="fa-solid fa-heart icon-hover "></i>
+                                        </button>
                                     </div>
                                 </div>
                             </article>
@@ -77,7 +86,10 @@
                                         <p class="card-subtitle">Cité Rouge</p>
                                     </div>
                                     <div>
-                                        <i class="fa-solid fa-heart"></i>
+                                        <button class="icon-button">
+                                            <i class="fa-regular fa-heart icon-default"></i>
+                                            <i class="fa-solid fa-heart icon-hover "></i>
+                                        </button>
                                     </div>
                                 </div>
                             </article>
@@ -91,7 +103,10 @@
                                         <p class="card-subtitle">Folie-Méricourt</p>
                                     </div>
                                     <div>
-                                        <i class="fa-solid fa-heart"></i>
+                                        <button class="icon-button">
+                                            <i class="fa-regular fa-heart icon-default"></i>
+                                            <i class="fa-solid fa-heart icon-hover "></i>
+                                        </button>
                                     </div>
                                 </div>
                             </article>
@@ -100,8 +115,8 @@
                 </section>
         </main>
         <footer class="footer">
-            <ul class="">
-                <li><h3>ohmyfood</h3></li>
+            <ul>
+                <li class="footer__logo"><img src="./images/logo/ohmyfood@2x.svg" alt=""></li>
                 <li><a href="">Proposer un restaurant</a></li>
                 <li><a href="">Devenir partenaire</a></li>
                 <li><a href="">Mentions légales</a></li>

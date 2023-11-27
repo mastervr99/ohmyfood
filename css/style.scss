@@ -8,6 +8,32 @@ body {
         list-style-type: none;
     }
 
+    .loading {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        z-index: 9999;
+        animation: fadeOut 3s;
+        animation-fill-mode: forwards;
+    
+        .loading-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes fadeOut {
+            100% {
+              opacity: 0;
+              visibility: hidden;
+            }
+        }
+    }  
+
     .header {    
         display: flex;
         flex-direction: column;
@@ -26,10 +52,15 @@ body {
             justify-content: center;
             align-items: center;
         }
+
+        .header__image {
+            height: 275px;
+        }
     }
 
     main {
-        
+        background-color: #F6F6F6;
+
         .presentation {
             display: flex;
             flex-direction: column;
@@ -48,65 +79,82 @@ body {
 
         .fonctionnement{
             ul {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
                 li {
+                    display: flex;
                     width: 100%;
-                    button {
-                        width: 100%;
-                        height: 72.38px;
-                        border-radius: 20px;
-                    }
+                    height: 72.38px;
+                    border: 2px solid;
+                    border-radius: 20px;
+                    justify-content: center;
+                    align-items: center;
                 }
             
             }
         }
 
-        .restaurants {
-
-            .restaurants__cards {
-                .card {
-                    display: flex;
-                    flex-direction: column;
-                    border-radius: 20px;
-                    padding: 5px;
-                    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+        .card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+            padding: 5px;
+            filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+            background-color: white;
+       
+            img {
+                object-fit: cover;
+                height: 124px;
+                border-radius: 20px 20px 0px 0px;
+                border: 5px;
+            }
+    
+            .card-content {
+                padding-left: 15px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+    
+                .card-title {
+                    font-size: 16px;
+                    margin-top: 10px;
+                    margin-bottom: 4px;
                 }
-                
-                .card img {
-                    object-fit: cover;
-                    height: 124px;
-                    border-radius: 20px 20px 0px 0px;
-                    border: 5px;
+    
+                .card-subtitle {
+                    font-size: 14px;
+                    margin: 5px 0;
                 }
-
-                .card-content {
-                    padding-left: 15px;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-
-                    .card-title {
-                        font-size: 16px;
-                        margin-top: 10px;
-                        margin-bottom: 4px;
-                    }
-
-                    .card-subtitle {
-                        font-size: 14px;
-                        margin: 5px 0;
-                    }
+    
+                .icon-button {
+                    position: relative;
+                    background: none;
+                    color: #9356DC;
+                    border: none;
+                    padding: 0;
+                    font: inherit;
+                    cursor: pointer;
+                    outline: inherit;
                 }
-                
-
+    
+                .card__price{
+                    padding-top: 15px;
+                }
+                  
             }
         }
+        
     }
 
     .footer{
         background-color: #353535;
         color: white;
+
+        ul {
+            .footer__logo {
+                img {
+                    color: white;
+                }
+            }
+        }
     }
     
 }
