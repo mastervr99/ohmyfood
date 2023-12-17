@@ -264,8 +264,11 @@ body {
                     margin: 5px 0;
                 }
 
-                .card__price{
-                    padding-top: 15px;
+                .card-price{
+                    padding-top: 20px;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 700;
+                    font-size: 15.04px;
                 }
             }
             
@@ -290,104 +293,164 @@ body {
         }
 
         .menu {
-            // position: absolute;
-            // top : 200px;
-            display: flex;
-            flex-direction: column;
-            z-index: 1000;
-            padding: 20px;
-            border-top: 1px solid white;
-            border-radius: 20px;
-            background-color: #F6F6F6;
-            gap: 40px;
-            
+            // opacity: 0;
+
+            // @for $i from 1 through 3 {
+            //     &:nth-child(#{$i}) {
+            //       animation: fadeIn 3s ease-in-out #{0.2s * $i} forwards;
+            //     }
+            // }
+          
+            // @keyframes fadeIn {
+            //     0% { opacity: 0; }
+            //     100% { opacity: 1; }
+            // }
+
             .menu__header {
+                position: relative;
+                top: -50px;
+                background-color: #F6F6F6;
+                border-top-right-radius: 40px;
+                border-top-left-radius: 40px;
                 display: flex;
                 justify-content: space-around;
-
+                padding-top: 30px;
+    
                 .menu__title {
                     font-family: 'Shrikhand';
                     font-style: italic;
                     font-weight: 400;
                     font-size: 28px;
+                    margin: 0;
                 }
-
+    
                 button {
                     display: flex;
                     align-items: center;
                 }
             }
-
-
-            .section_title{
-                position: relative;
-                font-family: 'Roboto', sans-serif;
-                font-weight: 300;
-                font-size: 16px;
-                padding-bottom: 10px;
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    width: 40px; 
-                    height: 3px; 
-                    background-color: #99E2D0;
-                  }
-            }
-
-            .card {
-                padding-right: 5px;
-                transition: padding-right 1s ease-in-out;
-                height: 69px;
-                justify-content: center;
-                padding: 15px;
-
-                .card-content {
-                    padding: 0;
-
-                    .card-txt {
-                        transition: width 1s ease-in-out;
-
-                        .card-title {
-                            font-weight: 500;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-        
-                        .card-subtitle {
-                            font-weight: 300;
-                            font-size: 15.04px;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }
-                    }
-                }
-
-
-                &:hover {
-                    padding-right: 25%;
-
-                    .card-txt {
-                        width: 80%;
-                    }
+    
+            .menu__body {
+                // position: relative;
+                // top : -50px;
+                display: flex;
+                flex-direction: column;
+                padding: 0 20px;
+                // border-radius: 40px;
+                background-color: #F6F6F6;
+                gap: 40px;
+                
+              
+    
+                section {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
                     
-                    .checkmark {
-                        opacity: 1;
-                        width: 20%;
+                    .section_title{
+                        position: relative;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 300;
+                        font-size: 16px;
+                        padding-bottom: 10px;
+                        margin-bottom: 0;
+        
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            width: 40px; 
+                            height: 3px; 
+                            background-color: #99E2D0;
+                          }
                     }
                 }
+    
+    
+                .card {
+                    padding-right: 5px;
+                    transition: padding-right 1s ease-in-out;
+                    height: 69px;
+                    justify-content: center;
+                    padding: 15px;
+                    margin-bottom: 0;
+    
+    
+                    .card-content {
+                        padding: 0;
+    
+                        .card-txt {
+                            transition: width 1s ease-in-out;
+    
+                            .card-title {
+                                font-weight: 500;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+            
+                            .card-subtitle {
+                                font-weight: 300;
+                                font-size: 14px;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                        }
+                    }
+    
+    
+                    &:hover {
+                        padding-right: 25%;
+    
+                        .card-txt {
+                            width: 80%;
+                        }
+                        
+                        .checkmark {
+                            opacity: 1;
+                            width: 20%;
+                        }
+                    }
+                }
+    
+                .command_action {
+                    display: flex;
+                    justify-content: center;
+    
+                    .action_button {
+                        margin: 0;
+                    }
+                }
+    
+                
+                
             }
 
             @media screen and (min-width: 1024px) {
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
-                min-width: 1055px;
+                align-items: center;
+                // min-width: 1055px;
+                background-color: white;
+
+                .menu__header, .menu__body {
+                    max-width: 1055px;
+                    width: 100%;
+                }
+
+                .menu__header {
+                    // justify-content: space-around;
+                }
+
+                section {
+                    // width: max-content;
+                }
             }
         }
+
 
 
 
@@ -426,11 +489,6 @@ body {
 
                 }
             }
-        }
-
-        .command_action {
-            display: flex;
-            justify-content: center;
         }
 
         .action_button {
@@ -504,6 +562,21 @@ body {
                     padding: 0 5px;
                 }
             }
+        }
+    }
+
+    .menu, .menu__header, .menu__footer {
+        opacity: 0;
+
+        @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              animation: fadeIn 3s ease-in-out #{0.2s * $i} forwards;
+            }
+        }
+      
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
     }
     

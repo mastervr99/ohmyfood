@@ -234,8 +234,11 @@ body main .card .card-content .card-subtitle {
   font-family: "Roboto", sans-serif;
   margin: 5px 0;
 }
-body main .card .card-content .card__price {
-  padding-top: 15px;
+body main .card .card-content .card-price {
+  padding-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 15.04px;
 }
 body main .card .checkmark {
   position: absolute;
@@ -254,38 +257,48 @@ body main .card .checkmark {
   line-height: 200px;
   transition: width 1s ease-in-out, opacity 1s ease-in-out;
 }
-body main .menu {
-  display: flex;
-  flex-direction: column;
-  z-index: 1000;
-  padding: 20px;
-  border-top: 1px solid white;
-  border-radius: 20px;
-  background-color: #F6F6F6;
-  gap: 40px;
-}
 body main .menu .menu__header {
+  position: relative;
+  top: -50px;
+  background-color: #F6F6F6;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
   display: flex;
   justify-content: space-around;
+  padding-top: 30px;
 }
 body main .menu .menu__header .menu__title {
   font-family: "Shrikhand";
   font-style: italic;
   font-weight: 400;
   font-size: 28px;
+  margin: 0;
 }
 body main .menu .menu__header button {
   display: flex;
   align-items: center;
 }
-body main .menu .section_title {
+body main .menu .menu__body {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  background-color: #F6F6F6;
+  gap: 40px;
+}
+body main .menu .menu__body section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+body main .menu .menu__body section .section_title {
   position: relative;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-size: 16px;
   padding-bottom: 10px;
+  margin-bottom: 0;
 }
-body main .menu .section_title::after {
+body main .menu .menu__body section .section_title::after {
   content: "";
   position: absolute;
   left: 0;
@@ -294,47 +307,61 @@ body main .menu .section_title::after {
   height: 3px;
   background-color: #99E2D0;
 }
-body main .menu .card {
+body main .menu .menu__body .card {
   padding-right: 5px;
   transition: padding-right 1s ease-in-out;
   height: 69px;
   justify-content: center;
   padding: 15px;
+  margin-bottom: 0;
 }
-body main .menu .card .card-content {
+body main .menu .menu__body .card .card-content {
   padding: 0;
 }
-body main .menu .card .card-content .card-txt {
+body main .menu .menu__body .card .card-content .card-txt {
   transition: width 1s ease-in-out;
 }
-body main .menu .card .card-content .card-txt .card-title {
+body main .menu .menu__body .card .card-content .card-txt .card-title {
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body main .menu .card .card-content .card-txt .card-subtitle {
+body main .menu .menu__body .card .card-content .card-txt .card-subtitle {
   font-weight: 300;
-  font-size: 15.04px;
+  font-size: 14px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body main .menu .card:hover {
+body main .menu .menu__body .card:hover {
   padding-right: 25%;
 }
-body main .menu .card:hover .card-txt {
+body main .menu .menu__body .card:hover .card-txt {
   width: 80%;
 }
-body main .menu .card:hover .checkmark {
+body main .menu .menu__body .card:hover .checkmark {
   opacity: 1;
   width: 20%;
+}
+body main .menu .menu__body .command_action {
+  display: flex;
+  justify-content: center;
+}
+body main .menu .menu__body .command_action .action_button {
+  margin: 0;
 }
 @media screen and (min-width: 1024px) {
   body main .menu {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    min-width: 1055px;
+    align-items: center;
+    background-color: white;
+  }
+  body main .menu .menu__header, body main .menu .menu__body {
+    max-width: 1055px;
+    width: 100%;
   }
 }
 body main .icon-button {
@@ -364,10 +391,6 @@ body main .icon-button:hover .icon-default {
 }
 body main .icon-button:hover .icon-hover {
   opacity: 1;
-}
-body main .command_action {
-  display: flex;
-  justify-content: center;
 }
 body main .action_button {
   height: 50px;
@@ -435,6 +458,32 @@ body .footer .footer_list li i {
   }
   body .footer ul li {
     padding: 0 5px;
+  }
+}
+body .menu, body .menu__header, body .menu__footer {
+  opacity: 0;
+}
+body .menu:nth-child(1), body .menu__header:nth-child(1), body .menu__footer:nth-child(1) {
+  animation: fadeIn 3s ease-in-out 0.2s forwards;
+}
+body .menu:nth-child(2), body .menu__header:nth-child(2), body .menu__footer:nth-child(2) {
+  animation: fadeIn 3s ease-in-out 0.4s forwards;
+}
+body .menu:nth-child(3), body .menu__header:nth-child(3), body .menu__footer:nth-child(3) {
+  animation: fadeIn 3s ease-in-out 0.6s forwards;
+}
+body .menu:nth-child(4), body .menu__header:nth-child(4), body .menu__footer:nth-child(4) {
+  animation: fadeIn 3s ease-in-out 0.8s forwards;
+}
+body .menu:nth-child(5), body .menu__header:nth-child(5), body .menu__footer:nth-child(5) {
+  animation: fadeIn 3s ease-in-out 1s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
