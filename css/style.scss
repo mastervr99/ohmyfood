@@ -100,7 +100,8 @@ body {
             font-family: 'Roboto', sans-serif;
             text-align: center;
             padding: 20px 0;
-            h1 {
+
+            .presentation__title {
                 height: 68px;
                 width: 73%;
                 margin-bottom: 0;
@@ -109,6 +110,20 @@ body {
             p {
                 font-weight: 300;
                 font-size: 18px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                br {
+                    display: none;
+                }
+
+                .presentation__title {
+                    font-weight: 400;
+                    font-size: 40px;
+                    height: 47px;
+                }
+
+
             }
 
         }
@@ -553,7 +568,16 @@ body {
             gap: 16px;
             height: 114px;
             align-items: end;
-            ul {
+
+            .footer_title {
+                font-size: 18px;
+                font-weight: bold;
+                padding-bottom: 0;
+                width : 10%;
+                height: 27px;
+            }
+
+            .footer_list {
                 display: flex;
                 min-width: 661px;
                 justify-content: left;
