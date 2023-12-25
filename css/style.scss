@@ -60,6 +60,7 @@ body {
             img {
                 height: 44px;
                 width: 65%;
+                padding-top: 10px;
             }
         }
 
@@ -105,6 +106,8 @@ body {
                 height: 68px;
                 width: 73%;
                 margin-bottom: 0;
+                font-weight: 700;
+                font-size: 24px;
             }
 
             p {
@@ -118,7 +121,7 @@ body {
                 }
 
                 .presentation__title {
-                    font-weight: 400;
+                    font-weight: 700;
                     font-size: 40px;
                     height: 47px;
                 }
@@ -131,8 +134,13 @@ body {
         .fonctionnement{
             padding: 20px;
             background-color: white;
-            ul {
+            font-family: 'Roboto', sans-serif;
+            .fonctionnement_list {
                 margin-left: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
                 li {
                     position: relative;
                     display: flex;
@@ -143,9 +151,8 @@ body {
                     background-color: #F6F6F6;
                     font-weight: 500;
                     font-size: 16px;
-                    font-family: 'Roboto', sans-serif;
                     margin-bottom: 20px;
-                    box-shadow: 10px 10px 15px #00000026;
+                    box-shadow: 0px 4px 15px 0px #00000026;
 
                     span {
                         position: absolute;
@@ -188,11 +195,11 @@ body {
                 justify-content: center;
                 div {
                     max-width: 1053px;
-                    ul {
-                        display: flex;
+                    .fonctionnement_list {
+                        flex-direction: row;
+                        gap: 30px;
                         li {
                             min-width: 335px;
-                            margin-right: 30px;
                         }
                     }
                 }
@@ -201,6 +208,7 @@ body {
 
         .restaurants {
             padding: 20px;
+            font-family: 'Roboto', sans-serif;
 
             @media screen and (min-width: 1024px) {
                 display: flex;
@@ -230,10 +238,12 @@ body {
             display: flex;
             flex-direction: column;
             border-radius: 20px;
-            filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+            // filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
             background-color: white;
             margin-bottom: 20px;
-            box-shadow: 10px 10px 15px #0000001A;
+            box-shadow: 0px 4px 15px 0px #0000001A;
+            font-family: 'Roboto', sans-serif;
+
 
             .card_tag {
                 position: absolute;
@@ -244,7 +254,6 @@ body {
                 left: 238px;
                 font-weight: 500;
                 font-size: 14px;
-                font-family: 'Roboto', sans-serif;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -268,20 +277,17 @@ body {
                     font-size: 18px;
                     margin-top: 10px;
                     margin-bottom: 4px;
-                    font-family: 'Roboto', sans-serif;
                     font-weight: 700;
                 }
     
                 .card-subtitle {
                     font-size: 17px;
                     font-weight: 300;
-                    font-family: 'Roboto', sans-serif;
                     margin: 5px 0;
                 }
 
                 .card-price{
                     padding-top: 20px;
-                    font-family: 'Roboto', sans-serif;
                     font-weight: 700;
                     font-size: 15.04px;
                 }
@@ -292,17 +298,20 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border-radius:  0 20px 20px 0;
+                border-radius:  0 15px 15px 0;
                 opacity: 0;
                 right: 0;
                 top: 0;
                 width: 0;
                 height: 100%;
-                background-color: green;
-                color: white;
+                background-color: #99E2D0;
                 text-align: center;
-                line-height: 200px;
                 transition: width 1s ease-in-out, opacity 1s ease-in-out;
+
+                i {
+                    color: white;
+                    font-size: 20px;
+                }
 
             }
         }
@@ -323,25 +332,27 @@ body {
 
             .menu__header {
                 position: relative;
-                top: -50px;
+                top: -40px;
                 background-color: #F6F6F6;
                 border-top-right-radius: 40px;
                 border-top-left-radius: 40px;
                 display: flex;
                 justify-content: space-around;
                 padding-top: 30px;
-    
+                height: 10px;
+
                 .menu__title {
                     font-family: 'Shrikhand';
-                    font-style: italic;
                     font-weight: 400;
                     font-size: 28px;
                     margin: 0;
                 }
     
                 button {
-                    display: flex;
-                    align-items: center;
+                    padding-top: 5px;
+                    // display: flex;
+                    // align-items: center;
+                    // justify-content: center;
                 }
             }
     
@@ -350,7 +361,7 @@ body {
                 // top : -50px;
                 display: flex;
                 flex-direction: column;
-                padding: 0 20px;
+                padding: 0 13px;
                 // border-radius: 40px;
                 background-color: #F6F6F6;
                 gap: 40px;
@@ -388,9 +399,10 @@ body {
                     transition: padding-right 1s ease-in-out;
                     height: 69px;
                     justify-content: center;
-                    padding: 15px;
+                    padding: 0 15px;
                     margin-bottom: 0;
-    
+                    border-radius:  15px;
+                    
     
                     .card-content {
                         padding: 0;
@@ -407,7 +419,7 @@ body {
             
                             .card-subtitle {
                                 font-weight: 300;
-                                font-size: 14px;
+                                font-size: 15px;
                                 white-space: nowrap;
                                 overflow: hidden;
                                 text-overflow: ellipsis;
@@ -425,7 +437,7 @@ body {
                         
                         .checkmark {
                             opacity: 1;
-                            width: 20%;
+                            width: 17%;
                         }
                     }
                 }
@@ -436,11 +448,11 @@ body {
     
                     .action_button {
                         margin: 0;
+                        width: 53%;
+                        height: 50px;
+                        padding: 0;
                     }
-                }
-    
-                
-                
+                }            
             }
 
             @media screen and (min-width: 1024px) {
@@ -509,7 +521,7 @@ body {
         .action_button {
             height: 50px;
             margin: 20px;
-            border: 2px solid ;
+            border: none;
             border-radius: 25px;
             font-weight: 500;
             font-size: 16px;
@@ -519,10 +531,10 @@ body {
             width: 61%;
             height: 50px;
             cursor: pointer;
+            transition: background 3s ease-in-out;
 
             &:hover{
-                background-color: #FF79DA;
-                transition: 1s;
+                background: linear-gradient(lighten(#FF79DA, 10%), lighten(#9356DC, 15%));
             }
 
             @media screen and (min-width: 1024px) {
@@ -535,13 +547,12 @@ body {
     .footer{
         background-color: #353535;
         color: white;
-        padding: 22px 25px;
+        padding: 0 25px;
 
         .footer_title {
             font-family: 'Shrikhand';
-            font-style: italic;
-            font-size: 40px;
-            font-weight: 800;
+            font-size: 18px;
+            font-weight: 400;
             padding: 20px 0;
             margin: 0;
         }
@@ -556,8 +567,19 @@ body {
                 font-family: 'Roboto', sans-serif;
                 i {
                     padding-right: 10px;
-                    width: 5%;
                 }
+
+                .fa-utensils{
+                    font-size: 14px;
+                }
+
+                .fa-handshake-angle{
+                    font-size: 10px;
+                }
+            }
+
+            .footer_last_links {
+                font-weight: 400;
             }
         }
 
@@ -566,14 +588,14 @@ body {
             justify-content: right;
             flex-direction: row-reverse;
             gap: 16px;
-            height: 114px;
+            height: 54px;
             align-items: end;
+            padding: 30px 25px 30px 25px;
 
             .footer_title {
                 font-size: 18px;
-                font-weight: bold;
-                padding-bottom: 0;
-                width : 10%;
+                font-weight: 400;
+                padding: 0 30px;
                 height: 27px;
             }
 
@@ -584,7 +606,21 @@ body {
 
                 li {
                     padding: 0 5px;
+
+                    i {
+                        padding-right: 12px;
+                    }
+
+                    .fa-handshake-angle {
+                        font-size: 12px;
+                    }
+
+                    &:nth-child(3) {
+                        padding-left: 30px;
+                    }
+
                 }
+ 
             }
         }
     }
@@ -594,7 +630,7 @@ body {
 
         @for $i from 1 through 5 {
             &:nth-child(#{$i}) {
-              animation: fadeIn 3s ease-in-out #{0.2s * $i} forwards;
+              animation: fadeIn 3s ease-in-out #{0.2 * $i}s forwards;
             }
         }
       
