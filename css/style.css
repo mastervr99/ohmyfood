@@ -373,13 +373,21 @@ body main .menu .menu__body .command_action .action_button {
   body main .menu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background-color: white;
   }
-  body main .menu .menu__header, body main .menu .menu__body {
+  body main .menu .menu__container {
     max-width: 1055px;
     width: 100%;
+  }
+  body main .menu .menu__header {
+    justify-content: center;
+  }
+  body main .menu .menu__header .menu__title {
+    padding-right: 50px;
+  }
+  body main .menu .menu__body {
+    padding-left: 210.5px;
+    padding-right: 210.5px;
   }
 }
 body main .icon-button {
