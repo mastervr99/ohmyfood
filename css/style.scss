@@ -478,13 +478,6 @@ body {
                 .menu__body{
                     padding-left: 210.5px;
                     padding-right: 210.5px;
-
-                    // .card {
-                    //     .card-content {
-                    //         display: flex;
-                    //         justify-content:end;
-                    //     }
-                    // }
                 }
             }
         }
@@ -636,10 +629,10 @@ body {
         }
     }
 
-    .menu, .menu__header, .menu__footer {
+    .menu {
         opacity: 0;
 
-        @for $i from 1 through 5 {
+        @for $i from 1 through 7 {
             &:nth-child(#{$i}) {
               animation: fadeIn 3s ease-in-out #{0.2 * $i}s forwards;
             }
