@@ -52,7 +52,7 @@ body {
             
             .header__back-button {
                 position: absolute;
-                left: 20px;
+                left: 17px;
                 color : #353535;
                 font-size: 20px;
             }
@@ -78,6 +78,18 @@ body {
             }
         }
 
+        @media screen and (min-width: 1024px) {
+            .header__logo {
+                height: 96.34px;
+                
+                img {
+                    padding: 0;
+                    width: 100%;
+                    height: 34.2px;
+                }
+            }
+        }
+
     }
     
     main {
@@ -87,9 +99,12 @@ body {
         
         .menu__page__image {
             height: 275px;
+            width: 100%;
     
             @media screen and (min-width: 1024px) {
-                min-width: 1440px;
+                object-fit: cover;
+                max-width: 1440px;
+                width: 100%;
                 height: 383px;
             }
         }
@@ -158,21 +173,20 @@ body {
                         position: absolute;
                         display: flex;
                         justify-content: center;
-                        align-items: center;
                         width: 24px;
                         height: 24px;
                         border-radius: 50%;
                         background-color: #9356DC;
                         color: white;
                         text-align: center;
-                        margin-right: 10px;
                         left: -10px;
                         font-size: 14.18px;
+                        line-height: 26.62px;
                     }
 
                     i {
                         position: relative;
-                        padding: 0 30px;
+                        padding: 0 25px 0 40px;
                         color: #7E7E7E;
                         font-size: 19px;
                         top : -3px;
@@ -207,7 +221,7 @@ body {
         }
 
         .restaurants {
-            padding: 20px;
+            padding: 20px 20px 0 20px;
             font-family: 'Roboto', sans-serif;
 
             @media screen and (min-width: 1024px) {
@@ -251,7 +265,7 @@ body {
                 height: 29px;
                 width: 24%;
                 top: 13px;
-                left: 238px;
+                right: 13px;
                 font-weight: 500;
                 font-size: 14px;
                 display: flex;
@@ -307,6 +321,7 @@ body {
                 background-color: #99E2D0;
                 text-align: center;
                 transition: width 1s ease-in-out, opacity 1s ease-in-out;
+                max-width: 59px;
 
                 i {
                     color: white;
@@ -317,18 +332,6 @@ body {
         }
 
         .menu {
-            // opacity: 0;
-
-            // @for $i from 1 through 3 {
-            //     &:nth-child(#{$i}) {
-            //       animation: fadeIn 3s ease-in-out #{0.2s * $i} forwards;
-            //     }
-            // }
-          
-            // @keyframes fadeIn {
-            //     0% { opacity: 0; }
-            //     100% { opacity: 1; }
-            // }
 
             .menu__header {
                 position: relative;
@@ -366,7 +369,20 @@ body {
                 background-color: #F6F6F6;
                 gap: 40px;
                 
+                > * { 
+                    opacity: 0;
+            
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) {
+                          animation: fadeIn 3s ease-in-out #{0.4 * $i}s forwards;
+                        }
+                    }
+                }
               
+                @keyframes fadeIn {
+                    0% { opacity: 0; }
+                    100% { opacity: 1; }
+                }
     
                 section {
                     display: flex;
@@ -409,6 +425,7 @@ body {
     
                         .card-txt {
                             transition: width 1s ease-in-out;
+                            width: 100%;
     
                             .card-title {
                                 font-weight: 500;
@@ -438,6 +455,7 @@ body {
                         .checkmark {
                             opacity: 1;
                             width: 17%;
+                            max-width: 59px;
                         }
                     }
                 }
@@ -459,12 +477,12 @@ body {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                // // min-width: 1055px;
-                // background-color: white;
+                background-color: white;
 
                 .menu__container {
                     max-width: 1055px;
                     width: 100%;
+                    background-color: #F6F6F6;
                 }
 
                 .menu__header {
@@ -478,6 +496,11 @@ body {
                 .menu__body{
                     padding-left: 210.5px;
                     padding-right: 210.5px;
+
+                    .command_action{
+                        padding-bottom: 40px;
+                    }
+
                 }
             }
         }
@@ -523,6 +546,7 @@ body {
         }
 
         .action_button {
+            position: relative;
             height: 50px;
             margin: 20px;
             border: none;
@@ -535,15 +559,36 @@ body {
             width: 61%;
             height: 50px;
             cursor: pointer;
-            transition: background 3s ease-in-out;
+            overflow: hidden;
 
-            &:hover{
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
                 background: linear-gradient(lighten(#FF79DA, 10%), lighten(#9356DC, 15%));
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+            }
+        
+            &:hover:before {
+                opacity: 1;
+            }
+
+            div {
+                position: relative;
+                z-index: 2;
             }
 
             @media screen and (min-width: 1024px) {
                 max-width: 218px;
             }
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding-bottom: 0;
         }
         
     }
@@ -626,21 +671,6 @@ body {
                 }
  
             }
-        }
-    }
-
-    .menu {
-        opacity: 0;
-
-        @for $i from 1 through 7 {
-            &:nth-child(#{$i}) {
-              animation: fadeIn 3s ease-in-out #{0.2 * $i}s forwards;
-            }
-        }
-      
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
         }
     }
     
