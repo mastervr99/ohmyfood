@@ -139,8 +139,13 @@ body {
                     font-weight: 700;
                     font-size: 40px;
                     height: 47px;
+                    margin-top: 0;
+                    padding-bottom: 10px;
                 }
 
+                p {
+                    margin-bottom: 10px;
+                }
 
             }
 
@@ -209,11 +214,13 @@ body {
                 justify-content: center;
                 div {
                     max-width: 1053px;
+                    width: 100%;
                     .fonctionnement_list {
                         flex-direction: row;
                         gap: 30px;
+                        width: 100%;
                         li {
-                            min-width: 335px;
+                            width: 100%;
                         }
                     }
                 }
@@ -227,13 +234,16 @@ body {
             @media screen and (min-width: 1024px) {
                 display: flex;
                 justify-content: center;
+                padding: 10px 20px 30px 20px;
+
                 div {
                     max-width: 1080px;
                     .restaurants__cards {
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-between;
-                        gap : 50px;
+                        padding-top: 10px;
+                        gap: 50px;
                         .card {
                             min-width: 490px;
                             height: 251px;
@@ -469,6 +479,7 @@ body {
                         width: 53%;
                         height: 50px;
                         padding: 0;
+                        max-width: 186px;
                     }
                 }            
             }
@@ -487,6 +498,7 @@ body {
 
                 .menu__header {
                     justify-content: center;
+                    padding-top: 50px;
 
                     .menu__title {
                         padding-right: 50px;
@@ -496,9 +508,12 @@ body {
                 .menu__body{
                     padding-left: 210.5px;
                     padding-right: 210.5px;
+                    padding-top: 20px;
+                    gap: 30px;
 
                     .command_action{
                         padding-bottom: 40px;
+                        padding-top: 15px;
                     }
 
                 }
@@ -557,6 +572,7 @@ body {
             background: linear-gradient(#FF79DA,#9356DC);
             color: white;
             width: 61%;
+            max-width: 218px;
             height: 50px;
             cursor: pointer;
             overflow: hidden;
@@ -644,7 +660,7 @@ body {
             .footer_title {
                 font-size: 18px;
                 font-weight: 400;
-                padding: 0 30px;
+                padding: 0 50px 0 30px;
                 height: 27px;
             }
 
