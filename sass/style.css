@@ -478,6 +478,7 @@ body .footer .footer_list .footer_last_links {
     flex-wrap: wrap;
     justify-content: space-between;
     padding-top: 10px;
+    padding-bottom: 30px;
     gap: 50px;
   }
   .restaurants div .restaurants__cards .card {
