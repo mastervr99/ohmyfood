@@ -227,36 +227,7 @@ body {
             }
         }
 
-        .restaurants {
-            padding: 20px 20px 0 20px;
-            font-family: 'Roboto', sans-serif;
-
-            @media screen and (min-width: 1024px) {
-                display: flex;
-                justify-content: center;
-                padding: 10px 20px 30px 20px;
-
-                div {
-                    max-width: 1080px;
-                    .restaurants__cards {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-between;
-                        padding-top: 10px;
-                        gap: 50px;
-                        .card {
-                            min-width: 490px;
-                            height: 251px;
-                            margin-bottom: 0;
-                            img {
-                                height: 181px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
+        
         .card {
             position: relative;
             display: flex;
@@ -267,6 +238,7 @@ body {
             margin-bottom: 20px;
             box-shadow: 0px 4px 15px 0px #0000001A;
             font-family: 'Roboto', sans-serif;
+            max-width: 490px;
 
 
             .card_tag {
@@ -274,6 +246,7 @@ body {
                 background-color: #99E2D0;
                 height: 29px;
                 width: 24%;
+                max-width: 80px;
                 top: 13px;
                 right: 13px;
                 font-weight: 500;
@@ -330,7 +303,7 @@ body {
                 height: 100%;
                 background-color: #99E2D0;
                 text-align: center;
-                transition: width 1s ease-in-out, opacity 1s ease-in-out;
+                transition: width 1.5s ease-in-out, opacity 1s ease-in-out;
                 max-width: 59px;
 
                 i {
@@ -340,6 +313,53 @@ body {
 
             }
         }
+
+        .restaurants {
+            padding: 20px 20px 0 20px;
+            font-family: 'Roboto', sans-serif;
+
+            @media screen and (min-width: 540px) {
+                display: flex;
+                justify-content: center;
+                padding: 10px 20px 30px 20px;
+
+                div {
+                    max-width: 1080px;
+                    .restaurants__cards {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        padding-top: 10px;
+                        gap: 50px;
+                        .card {
+                            min-width: 490px;
+                            height: 251px;
+                            margin-bottom: 0;
+
+                            img {
+                                height: 80%;
+                            }
+
+                            .card-content {
+                                padding: 10px 25px 10px 20px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media screen and (min-width: 540px) and (max-width: 1069px) {
+                div {
+                    .restaurants__cards {
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+
+            }
+
+        }
+
 
         .menu {
 
@@ -428,7 +448,7 @@ body {
                     padding: 0 15px;
                     margin-bottom: 0;
                     border-radius:  15px;
-                    
+                    max-width: 634px;
     
                     .card-content {
                         padding: 0;
@@ -456,7 +476,7 @@ body {
     
     
                     &:hover {
-                        padding-right: 25%;
+                        padding-right: 70px;
     
                         .card-txt {
                             width: 80%;
@@ -468,6 +488,7 @@ body {
                             max-width: 59px;
                         }
                     }
+
                 }
     
                 .command_action {
