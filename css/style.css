@@ -247,20 +247,39 @@ body main .card .card-content .card-price {
   font-weight: 700;
   font-size: 15.04px;
 }
+@keyframes checkmark-in {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 17%;
+    opacity: 1;
+  }
+}
+@keyframes checkmark-out {
+  0% {
+    width: 17%;
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
 body main .card .checkmark {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0 15px 15px 0;
-  opacity: 0;
   right: 0;
   top: 0;
   width: 0;
   height: 100%;
   background-color: #99E2D0;
   text-align: center;
-  transition: width 1.5s ease-in-out, opacity 1s ease-in-out;
+  animation: checkmark-out 1s forwards;
   max-width: 59px;
 }
 body main .card .checkmark i {
@@ -312,7 +331,7 @@ body main .menu .menu__header {
   border-top-right-radius: 40px;
   border-top-left-radius: 40px;
   display: flex;
-  justify-content: space-around;
+  padding-left: 13px;
   padding-top: 30px;
   height: 10px;
 }
@@ -323,7 +342,18 @@ body main .menu .menu__header .menu__title {
   margin: 0;
 }
 body main .menu .menu__header button {
+  position: absolute;
   padding-top: 5px;
+  right: 40px;
+}
+@media screen and (min-width: 540px) and (max-width: 1023px) {
+  body main .menu .menu__header {
+    justify-content: center;
+  }
+  body main .menu .menu__header button {
+    position: relative;
+    padding-left: 90px;
+  }
 }
 body main .menu .menu__body {
   display: flex;
@@ -414,8 +444,7 @@ body main .menu .menu__body .card:hover .card-txt {
   width: 80%;
 }
 body main .menu .menu__body .card:hover .checkmark {
-  opacity: 1;
-  width: 17%;
+  animation: checkmark-in 2.5s forwards;
   max-width: 59px;
 }
 body main .menu .menu__body .command_action {
@@ -447,6 +476,10 @@ body main .menu .menu__body .command_action .action_button {
   }
   body main .menu .menu__header .menu__title {
     padding-right: 50px;
+  }
+  body main .menu .menu__header button {
+    position: relative;
+    padding-left: 40px;
   }
   body main .menu .menu__body {
     padding-left: 210.5px;

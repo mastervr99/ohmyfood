@@ -289,6 +289,16 @@ body {
                     font-size: 15.04px;
                 }
             }
+
+            @keyframes checkmark-in {
+                0% { width: 0; opacity: 0; }
+                100% { width: 17%; opacity: 1; }
+            }
+            
+            @keyframes checkmark-out {
+                0% { width: 17%; opacity: 1; }
+                100% { width: 0; opacity: 0; }
+            }
             
             .checkmark {
                 position: absolute;
@@ -296,14 +306,13 @@ body {
                 justify-content: center;
                 align-items: center;
                 border-radius:  0 15px 15px 0;
-                opacity: 0;
                 right: 0;
                 top: 0;
                 width: 0;
                 height: 100%;
                 background-color: #99E2D0;
                 text-align: center;
-                transition: width 1.5s ease-in-out, opacity 1s ease-in-out;
+                animation: checkmark-out 1s forwards;
                 max-width: 59px;
 
                 i {
@@ -370,10 +379,10 @@ body {
                 border-top-right-radius: 40px;
                 border-top-left-radius: 40px;
                 display: flex;
-                justify-content: space-around;
+                padding-left: 13px;
                 padding-top: 30px;
                 height: 10px;
-
+                
                 .menu__title {
                     font-family: 'Shrikhand';
                     font-weight: 400;
@@ -382,11 +391,21 @@ body {
                 }
     
                 button {
+                    position: absolute;
                     padding-top: 5px;
-                    // display: flex;
-                    // align-items: center;
-                    // justify-content: center;
+                    right: 40px;
                 }
+
+                @media screen and (min-width: 540px) and (max-width: 1023px) {
+                    justify-content: center;
+
+                    button {
+                        position: relative;
+                        padding-left: 90px;
+                    }
+
+                }
+
             }
     
             .menu__body {
@@ -483,8 +502,7 @@ body {
                         }
                         
                         .checkmark {
-                            opacity: 1;
-                            width: 17%;
+                            animation: checkmark-in 2.5s forwards;
                             max-width: 59px;
                         }
                     }
@@ -523,6 +541,11 @@ body {
 
                     .menu__title {
                         padding-right: 50px;
+                    }
+
+                    button {
+                        position: relative;
+                        padding-left: 40px;
                     }
                 }
 
