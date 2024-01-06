@@ -18,13 +18,12 @@
         height: 10px;
 
         .menu__title {
-            font-family: 'Shrikhand';
             font-weight: 400;
             font-size: 28px;
             margin: 0;
         }
 
-        .icon-button {
+        .like_icon {
             position: absolute;
             padding-top: 5px;
             right: 40px;
@@ -60,7 +59,6 @@
             
             .section_title{
                 position: relative;
-                font-family: 'Roboto', sans-serif;
                 font-weight: 300;
                 font-size: 16px;
                 padding-bottom: 10px;
@@ -73,7 +71,7 @@
                     bottom: 0;
                     width: 40px; 
                     height: 3px; 
-                    background-color: #99E2D0;
+                    background-color: $tertiary-color;
                   }
             }
         }
@@ -98,7 +96,7 @@
             top: 0;
             width: 0;
             height: 100%;
-            background-color: #99E2D0;
+            background-color: $tertiary-color;
             text-align: center;
             animation: checkmark-out 1s forwards;
             max-width: 59px;
@@ -111,14 +109,13 @@
         }
 
         .card {
-            padding-right: 5px;
-            transition: padding-right 1s ease-in-out;
             height: 69px;
             justify-content: center;
             padding: 0 15px;
             margin-bottom: 0;
             border-radius:  15px;
             max-width: 634px;
+            transition: padding-right 1s ease-in-out;
 
             .card-content {
                 padding: 0;
@@ -153,7 +150,7 @@
 
             &:hover {
                 padding-right: 70px;
-
+                
                 .card-txt {
                     width: 80%;
                 }
@@ -188,7 +185,7 @@
             .menu__header {
                 justify-content: center;
             
-                .icon-button {
+                .like_icon {
                     position: relative;
                     padding-left: 90px;
                 }
@@ -203,8 +200,17 @@
         .menu__body {
             
             .card {
+
+                .card-price {
+                    transition: padding-right 1s ease-in-out;
+                }
+
                 &:hover {
                     padding-right: 16px;
+                    
+                    .card-price {
+                        padding-right: 60px;
+                    }
                 }
             }
         }
@@ -240,7 +246,7 @@
                 padding-right: 50px;
             }
 
-            .icon-button {
+            .like_icon {
                 position: relative;
                 padding-left: 40px;
             }

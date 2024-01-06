@@ -1,0 +1,35 @@
+.like_icon {
+    position: relative;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+
+    .icon-default, .icon-hover {
+        position: absolute;
+        right: 0;
+        transition: opacity 2s;
+        font-size: 22px;
+        -webkit-text-stroke: 1px white;
+    }
+
+    .icon-hover {
+        opacity: 0;
+        background: linear-gradient($primary-color, $secondary-color);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &:hover {
+        .icon-default {
+            opacity: 0;
+        }
+
+        .icon-hover {
+            opacity: 1;
+
+        }
+    }
+}

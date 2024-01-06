@@ -6,13 +6,12 @@
     background-color: white;
     margin-bottom: 20px;
     box-shadow: 0px 4px 15px 0px #0000001A;
-    font-family: 'Roboto', sans-serif;
     max-width: 490px;
 
 
     .card_tag {
         position: absolute;
-        background-color: #99E2D0;
+        background-color: $tertiary-color;
         height: 29px;
         width: 24%;
         max-width: 80px;
@@ -23,7 +22,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        color: green;
+        color: #008766;
     }
 
     .card_image {
@@ -53,36 +52,4 @@
         }
 
     }
-
-    // @keyframes checkmark-in {
-    //     0% { width: 0; opacity: 0; }
-    //     100% { width: 17%; opacity: 1; }
-    // }
-    
-    // @keyframes checkmark-out {
-    //     0% { width: 17%; opacity: 1; }
-    //     100% { width: 0; opacity: 0; }
-    // }
-    
-    // .checkmark {
-    //     position: absolute;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     border-radius:  0 15px 15px 0;
-    //     right: 0;
-    //     top: 0;
-    //     width: 0;
-    //     height: 100%;
-    //     background-color: #99E2D0;
-    //     text-align: center;
-    //     animation: checkmark-out 1s forwards;
-    //     max-width: 59px;
-
-    //     i {
-    //         color: white;
-    //         font-size: 20px;
-    //     }
-
-    // }
 }
