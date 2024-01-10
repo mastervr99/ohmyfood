@@ -3,24 +3,21 @@
 
 // Base
 @import 'base/body';
+@import 'base/main';
 @import 'base/fonts';
 
 // Layout
 @import 'layout/header';
 @import 'layout/footer';
-@import 'layout/main';
 
 // Components
 @import 'components/card';
-@import 'components/menu';
 @import 'components/like_icon';
 @import 'components/action_button';
 
 // Pages
-@import 'pages/restaurants';
-@import 'pages/loading';
-@import 'pages/presentation';
-@import 'pages/fonctionnement';
+@import 'pages/home';
+@import 'pages/menu';
 
 
 

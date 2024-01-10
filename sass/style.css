@@ -12,6 +12,17 @@ body a {
   color: inherit;
 }
 
+main {
+  background-color: #F6F6F6;
+  padding-bottom: 50px;
+}
+
+/* Desktop & Medium devices (tablets, more/equal than 1024px) */
+@media (min-width: 1024px) {
+  main {
+    padding-bottom: 0;
+  }
+}
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -143,17 +154,6 @@ body {
     padding-left: 30px;
   }
 }
-main {
-  background-color: #F6F6F6;
-  padding-bottom: 50px;
-}
-
-/* Desktop & Medium devices (tablets, more/equal than 1024px) */
-@media (min-width: 1024px) {
-  main {
-    padding-bottom: 0;
-  }
-}
 .card {
   position: relative;
   display: flex;
@@ -177,7 +177,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: green;
+  color: #008766;
 }
 .card .card_image {
   object-fit: cover;
@@ -203,6 +203,242 @@ main {
   margin: 5px 0;
 }
 
+.like_icon {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+.like_icon .icon-default, .like_icon .icon-hover {
+  position: absolute;
+  right: 0;
+  transition: opacity 2s;
+  font-size: 22px;
+  -webkit-text-stroke: 1px white;
+}
+.like_icon .icon-hover {
+  opacity: 0;
+  background: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.like_icon:hover .icon-default {
+  opacity: 0;
+}
+.like_icon:hover .icon-hover {
+  opacity: 1;
+}
+
+.action_button {
+  position: relative;
+  height: 50px;
+  margin: 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 16px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: white;
+  width: 61%;
+  max-width: 218px;
+  height: 50px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.action_button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#fface8, #bc95e9);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.action_button:hover:before {
+  opacity: 1;
+}
+.action_button div {
+  position: relative;
+  z-index: 2;
+}
+
+/****** Media queries ***********/
+/* Desktop & Medium devices (tablets, more/equal than 1024px) */
+@media (min-width: 1024px) {
+  .action_button {
+    max-width: 218px;
+  }
+}
+.loading {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 9999;
+  animation: fadeOut 3s;
+  animation-fill-mode: forwards;
+}
+.loading .loading-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes fadeOut {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.fonctionnement {
+  padding: 20px;
+  background-color: white;
+}
+.fonctionnement .fonctionnement_list {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fonctionnement .fonctionnement_list li {
+  position: relative;
+  display: flex;
+  width: 96%;
+  height: 72.38px;
+  border-radius: 20px;
+  align-items: center;
+  background-color: #F6F6F6;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
+}
+.fonctionnement .fonctionnement_list li span {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #9356DC;
+  color: white;
+  text-align: center;
+  left: -10px;
+  font-size: 14.18px;
+  line-height: 26.62px;
+}
+.fonctionnement .fonctionnement_list li i {
+  position: relative;
+  padding: 0 25px 0 40px;
+  color: #7E7E7E;
+  font-size: 19px;
+  top: -3px;
+}
+.fonctionnement .fonctionnement_list li .fa-store {
+  color: #9356DC;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0;
+}
+.presentation .presentation__title {
+  height: 68px;
+  width: 73%;
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 24px;
+}
+.presentation p {
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.restaurants {
+  padding: 20px 20px 0 20px;
+}
+
+/****** Media queries ***********/
+/* Small & Medium devices (mobiles, tablets, more/equal than 540px) */
+@media screen and (min-width: 540px) {
+  .restaurants {
+    display: flex;
+    justify-content: center;
+    padding: 10px 20px 0 20px;
+  }
+  .restaurants div {
+    max-width: 1080px;
+  }
+  .restaurants div .restaurants__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    gap: 50px;
+  }
+  .restaurants div .restaurants__cards .card {
+    min-width: 490px;
+    height: 251px;
+    margin-bottom: 0;
+  }
+  .restaurants div .restaurants__cards .card img {
+    height: 170px;
+  }
+  .restaurants div .restaurants__cards .card .card-content {
+    padding: 10px 25px 10px 20px;
+  }
+}
+/* Small & Medium devices (mobiles, tablets, more/equal than 540px and less/equal than 1069px) */
+@media screen and (min-width: 540px) and (max-width: 1069px) {
+  .restaurants div .restaurants__cards {
+    display: flex;
+    justify-content: center;
+  }
+}
+/* Desktop & Medium devices (tablets, more/equal than 1024px) */
+@media (min-width: 1024px) {
+  .fonctionnement {
+    display: flex;
+    justify-content: center;
+  }
+  .fonctionnement div {
+    max-width: 1053px;
+    width: 100%;
+  }
+  .fonctionnement div .fonctionnement_list {
+    flex-direction: row;
+    gap: 30px;
+    width: 100%;
+  }
+  .fonctionnement div .fonctionnement_list li {
+    width: 100%;
+  }
+  .presentation br {
+    display: none;
+  }
+  .presentation .presentation__title {
+    font-weight: 700;
+    font-size: 40px;
+    height: 47px;
+    margin-top: 0;
+    padding-bottom: 10px;
+  }
+  .presentation p {
+    margin-bottom: 10px;
+  }
+}
 .menu .menu__page__image {
   height: 275px;
   width: 100%;
@@ -385,6 +621,17 @@ main {
   }
 }
 @media screen and (min-width: 690px) and (max-width: 1023px) {
+  .menu .menu__body section {
+    align-items: center;
+  }
+  .menu .menu__body section .section_title {
+    display: flex;
+    width: 68px;
+    left: -300px;
+  }
+  .menu .menu__body .card {
+    min-width: 634px;
+  }
   .menu .menu__body .card .card-price {
     transition: padding-right 1s ease-in-out;
   }
@@ -433,247 +680,6 @@ main {
   .menu .menu__body .command_action {
     padding-bottom: 40px;
     padding-top: 15px;
-  }
-}
-.like_icon {
-  position: relative;
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
-.like_icon .icon-default, .like_icon .icon-hover {
-  position: absolute;
-  right: 0;
-  transition: opacity 2s;
-  font-size: 22px;
-  -webkit-text-stroke: 1px white;
-}
-.like_icon .icon-hover {
-  opacity: 0;
-  background: linear-gradient(#9356DC, #FF79DA);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.like_icon:hover .icon-default {
-  opacity: 0;
-}
-.like_icon:hover .icon-hover {
-  opacity: 1;
-}
-
-.action_button {
-  position: relative;
-  height: 50px;
-  margin: 20px;
-  border: none;
-  border-radius: 25px;
-  font-weight: 500;
-  font-size: 16px;
-  background: linear-gradient(#FF79DA, #9356DC);
-  color: white;
-  width: 61%;
-  max-width: 218px;
-  height: 50px;
-  cursor: pointer;
-  overflow: hidden;
-}
-.action_button:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#fface8, #bc95e9);
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-.action_button:hover:before {
-  opacity: 1;
-}
-.action_button div {
-  position: relative;
-  z-index: 2;
-}
-
-/****** Media queries ***********/
-/* Desktop & Medium devices (tablets, more/equal than 1024px) */
-@media (min-width: 1024px) {
-  .action_button {
-    max-width: 218px;
-  }
-}
-.restaurants {
-  padding: 20px 20px 0 20px;
-}
-
-/****** Media queries ***********/
-/* Small & Medium devices (mobiles, tablets, more/equal than 540px) */
-@media screen and (min-width: 540px) {
-  .restaurants {
-    display: flex;
-    justify-content: center;
-    padding: 10px 20px 30px 20px;
-  }
-  .restaurants div {
-    max-width: 1080px;
-  }
-  .restaurants div .restaurants__cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 30px;
-    gap: 50px;
-  }
-  .restaurants div .restaurants__cards .card {
-    min-width: 490px;
-    height: 251px;
-    margin-bottom: 0;
-  }
-  .restaurants div .restaurants__cards .card img {
-    height: 80%;
-  }
-  .restaurants div .restaurants__cards .card .card-content {
-    padding: 10px 25px 10px 20px;
-  }
-}
-/* Small & Medium devices (mobiles, tablets, more/equal than 540px and less/equal than 1069px) */
-@media screen and (min-width: 540px) and (max-width: 1069px) {
-  .restaurants div .restaurants__cards {
-    display: flex;
-    justify-content: center;
-  }
-}
-.loading {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  z-index: 9999;
-  animation: fadeOut 3s;
-  animation-fill-mode: forwards;
-}
-.loading .loading-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-@keyframes fadeOut {
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.presentation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px 0;
-}
-.presentation .presentation__title {
-  height: 68px;
-  width: 73%;
-  margin-bottom: 0;
-  font-weight: 700;
-  font-size: 24px;
-}
-.presentation p {
-  font-weight: 300;
-  font-size: 18px;
-}
-
-/****** Media queries ***********/
-/* Desktop & Medium devices (tablets, more/equal than 1024px) */
-@media (min-width: 1024px) {
-  .presentation br {
-    display: none;
-  }
-  .presentation .presentation__title {
-    font-weight: 700;
-    font-size: 40px;
-    height: 47px;
-    margin-top: 0;
-    padding-bottom: 10px;
-  }
-  .presentation p {
-    margin-bottom: 10px;
-  }
-}
-.fonctionnement {
-  padding: 20px;
-  background-color: white;
-}
-.fonctionnement .fonctionnement_list {
-  margin-left: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.fonctionnement .fonctionnement_list li {
-  position: relative;
-  display: flex;
-  width: 96%;
-  height: 72.38px;
-  border-radius: 20px;
-  align-items: center;
-  background-color: #F6F6F6;
-  font-weight: 500;
-  font-size: 16px;
-  margin-bottom: 20px;
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
-}
-.fonctionnement .fonctionnement_list li span {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: #9356DC;
-  color: white;
-  text-align: center;
-  left: -10px;
-  font-size: 14.18px;
-  line-height: 26.62px;
-}
-.fonctionnement .fonctionnement_list li i {
-  position: relative;
-  padding: 0 25px 0 40px;
-  color: #7E7E7E;
-  font-size: 19px;
-  top: -3px;
-}
-.fonctionnement .fonctionnement_list li .fa-store {
-  color: #9356DC;
-}
-
-/****** Media queries ***********/
-/* Desktop & Medium devices (tablets, more/equal than 1024px) */
-@media (min-width: 1024px) {
-  .fonctionnement {
-    display: flex;
-    justify-content: center;
-  }
-  .fonctionnement div {
-    max-width: 1053px;
-    width: 100%;
-  }
-  .fonctionnement div .fonctionnement_list {
-    flex-direction: row;
-    gap: 30px;
-    width: 100%;
-  }
-  .fonctionnement div .fonctionnement_list li {
-    width: 100%;
   }
 }
 

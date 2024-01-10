@@ -198,8 +198,18 @@
 @media screen and (min-width: 690px) and (max-width: 1023px) {
     .menu {
         .menu__body {
-            
+            section {
+                align-items: center;
+
+                .section_title {
+                    display: flex;
+                    width: 68px;
+                    left: -300px;
+
+                }
+            }
             .card {
+                min-width: 634px;
 
                 .card-price {
                     transition: padding-right 1s ease-in-out;
