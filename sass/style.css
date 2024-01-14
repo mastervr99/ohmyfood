@@ -14,7 +14,6 @@ body a {
 
 main {
   background-color: #F6F6F6;
-  padding-bottom: 50px;
 }
 
 /* Desktop & Medium devices (tablets, more/equal than 1024px) */
@@ -103,7 +102,7 @@ body {
   gap: 7px;
 }
 .footer .footer_list li {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   font-weight: 500;
   font-size: 16px;
 }
@@ -181,7 +180,7 @@ body {
 }
 .card .card_image {
   object-fit: cover;
-  height: 124px;
+  height: 170px;
   border-radius: 20px 20px 0px 0px;
   border: 5px;
 }
@@ -238,6 +237,7 @@ body {
   margin: 20px;
   border: none;
   border-radius: 25px;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
   font-weight: 500;
   font-size: 16px;
   background: linear-gradient(#FF79DA, #9356DC);
@@ -298,8 +298,29 @@ body {
   }
 }
 
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0 40px 0;
+}
+.presentation .presentation__title {
+  height: 68px;
+  width: 73%;
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 24px;
+}
+.presentation p {
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 .fonctionnement {
-  padding: 20px;
+  padding: 20px 20px 35px 20px;
   background-color: white;
 }
 .fonctionnement .fonctionnement_list {
@@ -307,6 +328,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 26px;
 }
 .fonctionnement .fonctionnement_list li {
   position: relative;
@@ -346,27 +368,8 @@ body {
   color: #9356DC;
 }
 
-.presentation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px 0;
-}
-.presentation .presentation__title {
-  height: 68px;
-  width: 73%;
-  margin-bottom: 0;
-  font-weight: 700;
-  font-size: 24px;
-}
-.presentation p {
-  font-weight: 300;
-  font-size: 18px;
-}
-
 .restaurants {
-  padding: 20px 20px 0 20px;
+  padding: 35px 20px 50px 20px;
 }
 
 /****** Media queries ***********/
@@ -412,6 +415,8 @@ body {
   .fonctionnement {
     display: flex;
     justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 15px;
   }
   .fonctionnement div {
     max-width: 1053px;
@@ -425,6 +430,9 @@ body {
   .fonctionnement div .fonctionnement_list li {
     width: 100%;
   }
+  .presentation {
+    padding: 30px 0 10px 0;
+  }
   .presentation br {
     display: none;
   }
@@ -436,8 +444,12 @@ body {
     padding-bottom: 10px;
   }
   .presentation p {
+    margin-top: 18px;
     margin-bottom: 10px;
   }
+}
+.menu {
+  padding-bottom: 40px;
 }
 .menu .menu__page__image {
   height: 275px;
@@ -469,7 +481,7 @@ body {
   flex-direction: column;
   padding: 0 13px;
   background-color: #F6F6F6;
-  gap: 40px;
+  gap: 30px;
 }
 .menu .menu__body > * {
   opacity: 0;
@@ -601,6 +613,7 @@ body {
 .menu .menu__body .command_action {
   display: flex;
   justify-content: center;
+  padding-top: 10px;
 }
 .menu .menu__body .command_action .action_button {
   margin: 0;
@@ -648,6 +661,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: white;
+    padding-bottom: 0;
   }
   .menu .menu__page__image {
     object-fit: cover;
