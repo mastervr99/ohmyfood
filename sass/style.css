@@ -202,11 +202,18 @@ body {
   margin: 5px 0;
 }
 
+/* Desktop & Medium devices (tablets, more/equal than 1024px) */
+@media (min-width: 1024px) {
+  .card .card_tag {
+    right: 20px;
+  }
+}
 .like_icon {
   position: relative;
   background: none;
   border: none;
   padding: 0;
+  padding-top: 15px;
   font: inherit;
   cursor: pointer;
   outline: inherit;
@@ -262,7 +269,7 @@ body {
 .action_button:hover:before {
   opacity: 1;
 }
-.action_button div {
+.action_button span {
   position: relative;
   z-index: 2;
 }

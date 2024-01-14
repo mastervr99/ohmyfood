@@ -53,3 +53,12 @@
 
     }
 }
+
+/* Desktop & Medium devices (tablets, more/equal than 1024px) */
+@media (min-width: 1024px) {
+    .card {
+        .card_tag {
+            right: 20px;
+        }
+    }
+}
